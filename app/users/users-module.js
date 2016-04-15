@@ -8,7 +8,7 @@
           templateUrl: 'app/users/home.templ.html',
           controller: 'UsersController'
         })
-      }])
+      }]);
 
 /*
       .controller('UsersController', ['$scope',
