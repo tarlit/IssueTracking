@@ -12,7 +12,7 @@
     <script src="libs/jquery/jquery-2.2.2.js"></script>
     <script src="libs/bootstrap/bootstrap.js"></script>
   </head>
-  <body ng-cloak>
+  <body ng-controller="MainController" ng-cloak>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -38,14 +38,22 @@
     </nav>
 
     <div class="container">
+      {{ currentUser.id }}
+    </div>
+
+    <div class="container">
       <div ng-view></div>
     </div>
 
     <script src="app/app.js"></script>
+    <script src="app/common/main.js"></script>
+    <script src="app/common/main-controller.js"></script>
     <script src="app/users/users-module.js"></script>
     <script src="app/users/users-controller.js"></script>
     <script src="app/users/authentication.js"></script>
-
+    <script src="app/users/identity.js"></script>
+    <script src="app/projects/projects.js"></script>
+    <script src="app/projects/projects-controller.js"></script>
 
   </body>
 </html>

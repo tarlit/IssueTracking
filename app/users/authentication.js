@@ -20,7 +20,7 @@ angular.module('issueTracking.users')
 
       function login(user) {
         var deferred = $q.defer();
-        $http.post(BASE_URL + 'api/Account/Login', user)
+        $http.post(BASE_URL + 'api/Token', user)
           .then(function (responce) {
             deferred.resolve(responce.data);
           }, function (error) {

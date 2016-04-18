@@ -2,7 +2,10 @@
 
 angular.module('issueTracking', [
   'ngRoute',
-  'issueTracking.users'])
+  'issueTracking.common',
+  'issueTracking.users',
+  'issueTracking.projects'
+])
 
   .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
 
