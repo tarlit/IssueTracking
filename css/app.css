@@ -1,1 +1,19 @@
+ul {
+  margin: 0;
+}
 
+.contour {
+  border: 1px dotted #bbb;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+#footer {
+  background: #eee;
+  color: #888;
+  padding: 5px 0;
+}
+
+#footer a {
+  color: #888;
+}
