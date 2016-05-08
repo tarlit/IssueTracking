@@ -12,7 +12,7 @@ MainController.$inject = [
       'notifyService'];
 
 function MainController($scope, $location, authService, usersService, notifyService) {
-  
+
   $scope.isAuthenticated = function() {
       return authService.isAuthenticated();
   };
@@ -22,7 +22,7 @@ function MainController($scope, $location, authService, usersService, notifyServ
   };
 
   $scope.logout = function() {
-      authService.logoutUser()
+      authService.logout()
           .then(function success() {
               sessionStorage.clear();
               notifyService.showSuccess('User logout');

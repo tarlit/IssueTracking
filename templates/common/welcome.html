@@ -1,0 +1,11 @@
+<div class="row" ng-if="!isAuthenticated()">
+    <div class="well bs-component col-lg-5">
+        <div ng-login-form></div>
+    </div>
+
+    <div class="well bs-component col-lg-5 col-lg-offset-2">
+        <div ng-register-form></div>
+    </div>
+</div>
+
+<div ng-dashboard></div>

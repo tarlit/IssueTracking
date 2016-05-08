@@ -46,7 +46,7 @@ function authService($http, $q, BASE_URL) {
 
   function login(user) {
     var deferred = $q.defer(),
-        loginData = "grant_type=password&username=" + userData.username + "&password=" + userData.password;
+        loginData = "grant_type=password&username=" + user.username + "&password=" + user.password;
 
 		var request = {
 			method: 'POST',
