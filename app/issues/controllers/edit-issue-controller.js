@@ -50,7 +50,7 @@ function EditIssueController($scope, $routeParams, $location, issuesService, pro
             Description: $scope.currentIssue.Description,
             DueDate: $scope.currentIssueDueDateLocal,
             AssigneeId: $scope.currentIssue.Assignee.Id,
-            PriorityId: $scope.issuePriority,
+            PriorityId: $scope.issuePriority.Id,
             Labels: $scope.currentIssueLabels
         };
 

@@ -12,10 +12,11 @@ EditProjectController.$inject = [
     'notifyService'];
 
 function EditProjectController($scope, $routeParams, $location, projectsService, notifyService) {
+
     $scope.allUsers();
 
-    function getArrayOfStrings(str) {
-        return str.split(',');
+    function getArrayOfStrings(strArray) {
+        return strArray.split(',');
     }
 
     projectsService.getProjectById($routeParams.id)
@@ -66,4 +67,5 @@ function EditProjectController($scope, $routeParams, $location, projectsService,
                 notifyService.showError('Unable to edit project', err);
             });
     };
+
 }

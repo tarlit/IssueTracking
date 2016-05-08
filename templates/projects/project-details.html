@@ -2,14 +2,18 @@
 
 <div>
     <div class="col-md-4">
-        <a href="#projects/edit/{{currentProject.Id}}" class="btn btn-success" ng-if="isAdmin() || isLeadOfProject" role="button">Edit</a>
-        <a href="#projects/add-issue/{{currentProject.Id}}" class="btn btn-success" ng-if="isAdmin() || isLeadOfProject" role="button">Add Issue</a>
+        <a href="#projects/edit/{{currentProject.Id}}" class="btn btn-warning" ng-if="isAdmin() || isLeadOfProject" role="button">
+          Edit Project
+        </a>
+        <a href="#projects/add-issue/{{currentProject.Id}}" class="btn btn-success" ng-if="isAdmin() || isLeadOfProject" role="button">
+          Add Issue
+        </a>
         <p><strong>ProjectKey:</strong> {{currentProject.ProjectKey}}</p>
         <p><strong>Name:</strong> {{currentProject.Name}}</p>
         <p><strong>Description:</strong> {{currentProject.Description}}</p>
         <p><strong>Labels: </strong>{{currentProjectLabels.join(', ')}}</p>
         <p><strong>Priorities: </strong>{{currentProjectPriorities.join(', ')}}</p>
-        
+
         <h3>Issues Filters:</h3>
         <div ng-issue-filter></div>
     </div>

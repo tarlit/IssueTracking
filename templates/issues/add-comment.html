@@ -3,9 +3,9 @@
         <label for="addComment">Add comment</label>
         <textarea class="form-control" id="addComment" ng-model="issueComment.Text" required></textarea>
         <div class="text-right">
-            <button class="btn btn-primary btn-sm"
-                    ng-disabled="addCommentForm.$invalid"
-                    ng-click="addComment(issueComment)">Add</button>
+            <button class="btn btn-primary" role="button" ng-disabled="addCommentForm.$invalid" ng-click="addComment(issueComment)">
+                Add
+            </button>
         </div>
     </div>
 </form>

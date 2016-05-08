@@ -1,6 +1,5 @@
-<div class="page-header">
-    <h2>New project</h2>
-</div>
+<h2>New project</h2>
+
 <div>
     <form name="addProjectForm">
         <div class="form-group">
@@ -30,6 +29,8 @@
             <label for="projectDescription">Description</label>
             <textarea class="form-control" id="projectDescription" ng-model="project.description" placeholder="description" required></textarea>
         </div>
-        <button class="btn btn-primary" ng-disabled="addProjectForm.$invalid" ng-click="addProject(project)">Add project</button>
+        <button class="btn btn-primary" ng-disabled="addProjectForm.$invalid" ng-click="addProject(project)">
+          Add project
+        </button>
     </form>
 </div>

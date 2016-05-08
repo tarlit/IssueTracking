@@ -56,7 +56,7 @@ function ViewIssueController($scope, $routeParams, issuesService, commentsServic
     };
 
     $scope.changeStatus = function(statusId) {
-        issuesService.changeStatus($routeParams.id, statusId)
+        issuesService.changeIssueStatus($routeParams.id, statusId)
             .then(function() {
                 $scope.getIssueById();
             }, function error(err) {

@@ -13,11 +13,16 @@
             <tbody>
             <tr ng-repeat="project in myProjects">
                 <td>{{project.Name}}</td>
-                <td class="text-center"><a href="#projects/{{project.Id}}" class="btn btn-default" role="button">View</a></td>
-                <td class="text-center"><a href="#projects/edit/{{project.Id}}" class="btn btn-success" role="button">Edit</a></td>
+                <td class="text-center">
+                  <a href="#projects/{{project.Id}}" class="btn btn-default" role="button">View</a>
+                </td>
+                <td class="text-center">
+                  <a href="#projects/edit/{{project.Id}}" class="btn btn-success" role="button">Edit</a>
+                </td>
             </tr>
             </tbody>
         </table>
+        
         <div class="text-center">
           <pagination total-items="myTotalProjects" ng-model="myProjectsParams.pageNumber"
                       items-per-page="myProjectsParams.pageSize" ng-change="getMyProjects()"
@@ -25,7 +30,7 @@
           </pagination>
         </div>
     </div>
-    
+
     <div ng-if="myProjects.length === 0">
         <h3>You are not lead of any project!</h3>
     </div>

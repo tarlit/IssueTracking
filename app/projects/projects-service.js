@@ -126,7 +126,7 @@ function projectsService($http, $q, BASE_URL) {
 
       var request = {
           method: 'PUT',
-          url: baseUrl + 'projects/' + id,
+          url: BASE_URL + 'projects/' + id,
           headers: {
               'Authorization': 'Bearer ' + JSON.parse(sessionStorage['currentUser']).access_token,
               'Content-Type': 'application/x-www-form-urlencoded'

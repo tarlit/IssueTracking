@@ -1,14 +1,10 @@
-<div class="page-header">
-    <h2>Edit project</h2>
-</div>
+<h2>Edit project</h2>
+
 <div>
     <div ng-if="isLeadOfProject || isAdmin()">
         <form name="editProjectForm">
             <label for="projectName">Name</label>
-            <input type="text"
-                   class="form-control"
-                   id="projectName"
-                   ng-model="currentProject.Name" />
+            <input type="text" class="form-control" id="projectName" ng-model="currentProject.Name" />
             <div class="form-group" ng-if="isAdmin()">
                 <label for="projectLeader">Leader</label>
                 <select class="form-control" id="projectLeader" ng-model="currentProject.Lead.Id">
@@ -34,6 +30,7 @@
             <button class="btn btn-primary" ng-click="editProject()">Edit project</button>
         </form>
     </div>
+
     <div ng-if="!isLeadOfProject && !isAdmin()">
         <h3>You are not admin or lead of this issue`s project.</h3>
     </div>
