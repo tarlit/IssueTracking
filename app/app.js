@@ -6,12 +6,13 @@ angular.module('issueTracking', [
   'ui.bootstrap.pagination',
   'issueTracking.common',
   'issueTracking.home',
-  'issueTracking.issues'
+  'issueTracking.issues',
+  'issueTracking.projects'
 ])
 
   .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
 
-  .constant('PAGE_SIZE', 10)
+  .constant('PAGE_SIZE', 7)
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/'});

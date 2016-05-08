@@ -1,0 +1,39 @@
+<h2>Project Details</h2>
+
+<div>
+    <div class="col-md-4">
+        <a href="#projects/edit/{{currentProject.Id}}" class="btn btn-success" ng-if="isAdmin() || isLeadOfProject" role="button">Edit</a>
+        <a href="#projects/add-issue/{{currentProject.Id}}" class="btn btn-success" ng-if="isAdmin() || isLeadOfProject" role="button">Add Issue</a>
+        <p><strong>ProjectKey:</strong> {{currentProject.ProjectKey}}</p>
+        <p><strong>Name:</strong> {{currentProject.Name}}</p>
+        <p><strong>Description:</strong> {{currentProject.Description}}</p>
+        <p><strong>Labels: </strong>{{currentProjectLabels.join(', ')}}</p>
+        <p><strong>Priorities: </strong>{{currentProjectPriorities.join(', ')}}</p>
+        
+        <h3>Issues Filters:</h3>
+        <div ng-issue-filter></div>
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>DueDate</th>
+                <th>Assignee</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="issue in currentProjectIssues |
+                    filter: {Status: {Id: issueStatusFilter || '!!'}} |
+                    filter: {Assignee: {Username: issueAssigneeFilter || '!!'}} |
+                    filter: {Priority: {Name: issuePriorityFilter || '!!'}}">
+                <td><a href="#issues/{{issue.Id}}">{{issue.Title}}</a></td>
+                <td>{{issue.Description}}</td>
+                <td>{{issue.DueDate}}</td>
+                <td>{{issue.Assignee.Username}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

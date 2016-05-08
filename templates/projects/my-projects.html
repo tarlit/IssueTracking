@@ -1,0 +1,32 @@
+<h2>My projects</h2>
+
+<div>
+    <div ng-if="myProjects.length !== 0">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="col-lg-8">Project name</th>
+                <th class="col-lg-2 text-center">View project</th>
+                <th class="col-lg-2 text-center">Edit project</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="project in myProjects">
+                <td>{{project.Name}}</td>
+                <td class="text-center"><a href="#projects/{{project.Id}}" class="btn btn-default" role="button">View</a></td>
+                <td class="text-center"><a href="#projects/edit/{{project.Id}}" class="btn btn-success" role="button">Edit</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+          <pagination total-items="myTotalProjects" ng-model="myProjectsParams.pageNumber"
+                      items-per-page="myProjectsParams.pageSize" ng-change="getMyProjects()"
+                      max-size="9" boundary-links="true" class="paging">
+          </pagination>
+        </div>
+    </div>
+    
+    <div ng-if="myProjects.length === 0">
+        <h3>You are not lead of any project!</h3>
+    </div>
+</div>
